@@ -29,6 +29,10 @@ class MultiserverWhenever
   end
   
   def roles
+    puts ">>>>>>>>>>>>>DEBUG: "
+    puts hostname
+    puts config[hostname]
+    puts "<<<<<<<<<<<<<<<<<<"
     [config[hostname]].flatten.compact
   end
   
