@@ -22,7 +22,7 @@ class MultiserverWheneverizer
   end
   
   def hostname
-    `hostname`.strip
+    "#{command('hostname').strip}_#{ENV['RACK_ENV']}"
   end
   
   private
@@ -30,6 +30,8 @@ class MultiserverWheneverizer
   def gem_root
     @gem_root ||= File.expand_path File.dirname(File.dirname(__FILE__))
   end
-  
 
+  def command(cmd)
+    %x{#{cmd}}.strip
+  end
 end
