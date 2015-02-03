@@ -45,7 +45,7 @@ class MultiserverWhenever
   end
   
   def hostname
-    "#{command('hostname').strip}_#{ENV['RACK_ENV'].strip}"
+    "#{command('hostname').strip}_#{ENV['RACK_ENV']}"
   end
   
   # So for some reason, the whenever command requires that the
